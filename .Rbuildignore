@@ -1,2 +1,6 @@
 ^nyt\.Rproj$
 ^\.Rproj\.user$
+^README\.Rmd$
+^LICENSE\.md$
+^data/sections\.R$
+^data-raw$

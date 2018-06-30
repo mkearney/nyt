@@ -1,0 +1,58 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  eval = FALSE,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(nyt)
+```
+# nyt
+
+Collecting nytimes data.
+
+## Installation
+
+You can install **{nyt}** from [Github](https://github.com) with:
+
+``` r
+devtools::install_github("mkearney/nyt")
+```
+
+## `nyt_articles()`
+
+This is a basic example showing how to search for articles from the `US` section:
+
+```{r articles, eval = TRUE}
+## basic example code
+us1 <- nyt_articles(section = "us", page = 1)
+
+## view data
+us1
+
+## get multiple pages
+w <- purrr::map(1:3, ~ nyt_articles(section = "world", page = .x))
+
+## merge and view data
+dplyr::bind_rows(w)
+```
+
+
+## `nyt_comments()`
+
+This is a basic example showing how to search for comments associated with an article's URL:
+
+```{r comments, eval = TRUE}
+## basic example code
+c1 <- nyt_comments(us1$url[9])
+
+## view data
+c1
+```
