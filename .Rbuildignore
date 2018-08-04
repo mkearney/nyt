@@ -4,3 +4,4 @@
 ^LICENSE\.md$
 ^data/sections\.R$
 ^data-raw$
+.DS_Store
